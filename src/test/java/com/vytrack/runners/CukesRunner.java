@@ -1,0 +1,19 @@
+package com.vytrack.runners;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.runner.RunWith;
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        strict = true,
+        plugin = {"json:target/cucumber.json",          // our report file gets the test data from cucumber.json file
+                "html:target/default-html-reports", // default cucumber html report
+                "rerun:target/rerun.txt"},    // json: xml file, keeps data in key and value structure
+                                                         // this plugin creates target / cucumber.json file
+        features = "src/test/resources/features",
+        glue = "com/vytrack/step_definitions",
+     // dryRun = true,
+        tags = "@wip"
+)
+public class CukesRunner {
+
+}
