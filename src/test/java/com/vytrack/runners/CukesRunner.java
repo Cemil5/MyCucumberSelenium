@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         strict = true,
         plugin = {"json:target/cucumber.json",          // our report file gets the test data from cucumber.json file
+// json: xml file, keeps data in key and value structure, this plugin creates target / cucumber.json file
                 "html:target/default-html-reports", // default cucumber html report
-                "rerun:target/rerun.txt"},    // json: xml file, keeps data in key and value structure
-                                                         // this plugin creates target / cucumber.json file
+                "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
         glue = "com/vytrack/step_definitions",
      // dryRun = true,
