@@ -32,6 +32,25 @@ public class Driver {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
                     break;
+                case "chrome-noSSL":        // change chrome options to accept untrusted certificate
+                    WebDriverManager.chromedriver().setup();
+                    //Create instance of ChromeOptions Class
+                    ChromeOptions handlingSSL = new ChromeOptions();
+
+                    //Accept insecure cert method with true as parameter to accept the untrusted certificate
+                    handlingSSL.setAcceptInsecureCerts(true);
+
+                    //Creating instance of Chrome driver by passing reference of ChromeOptions object
+                    driver = new ChromeDriver(handlingSSL);
+   /*
+ChromeOptions handlingSSL = new ChromeOptions(); -- We create an object of ChromeOptions class.
+handlingSSL.setAcceptInsecureCerts(true); -- Now we will use a capability setAcceptInsecureCerts. We pass the parameter
+as true, which means the invalid certificate will be trusted implicitly by the browser.
+WebDriver driver = new ChromeDriver(handlingSSL); -- Next, we create an instance of chrome driver and pass the
+ChromeOptions object as an argument so that our browser session will inherit the properties that we have just set.
+    */
+
+                    break;
                 case "chrome-eager":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(new ChromeOptions().setPageLoadStrategy(PageLoadStrategy.EAGER));
