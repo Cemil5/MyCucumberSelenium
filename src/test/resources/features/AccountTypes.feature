@@ -9,7 +9,7 @@ Feature: Account Types
   Scenario: Store manager user
     Given the user logged in as "store manager"
     When the user navigates to "Customers" "Contacts"
-    Then the title contains "Contacts - Customer"
+    Then the title contains "Contacts - CustomerS"
 
 
   Scenario: Sales manager user
