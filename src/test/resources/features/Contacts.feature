@@ -11,5 +11,5 @@ Feature: Contacts page
     Given the user is on the login page
     And the user enters the sales manager information
     When the user navigates to "Activities" "Calendar Events"
-    Then the title contains "Calendar"
+    Then the title contains "CalendarS"
 
