@@ -82,11 +82,11 @@
 <!--                    <version>2.22.2</version>-->
 
                     <configuration>
-<!--
+
 
                         <parallel>methods</parallel>
                         <useUnlimitedThreads>true</useUnlimitedThreads>
--->
+
 
                         <testFailureIgnore>true</testFailureIgnore>
                         <runOrder>Alphabetical</runOrder>
