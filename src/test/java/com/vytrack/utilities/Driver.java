@@ -1,7 +1,6 @@
 package com.vytrack.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -25,12 +24,12 @@ public class Driver {
     // in this pool we can have separate objects for each thread
     // for each thread, in InheritableThreadLocal we can have separate object for that thread
     // driver class will provide separate webdriver object per thread
-    private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
+    private static final InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
     public static WebDriver get() {
         //if this thread doesn't have driver - create it and add to pool
         if (driverPool.get() == null) {
 //            if we pass the driver from terminal then use that one
-//           if we do not pass the driver from terminal then use the one properties file
+//           if we do not pass the driver from terminal then use the one property file
             String browser = System.getProperty("browser") != null ? browser = System.getProperty("browser") : ConfigurationReader.get("browser");
             switch (browser) {
                 case "chrome":
@@ -67,12 +66,17 @@ public class Driver {
                     WebDriverManager.getInstance(SafariDriver.class).setup();
                     driverPool.set(new SafariDriver());
                     break;
-                case "remote_chrome":
+                case "remote-chrome":
                     ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.setCapability("platform", Platform.ANY);
                     try {
                      //   driverPool.set(new RemoteWebDriver(new URL("http://3.236.102.181:4444/wd/hub"),chromeOptions));
-                        driverPool.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),chromeOptions));
+                        //  jenkins 18.212.210.75 benim aws ip'im 20-11
+                        // selenimgrid ip 172.31.5.13:4444
+                        // selenimgrid public ip : 13.58.94.118
+                      //  driverPool.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),chromeOptions));
+                        driverPool.set(new RemoteWebDriver(new URL("http://13.58.94.118:4444/wd/hub"),chromeOptions));
+
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }

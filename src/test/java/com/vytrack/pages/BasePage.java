@@ -68,8 +68,7 @@ public class BasePage {
 
     public String getUserName(){
         waitUntilLoaderScreenDisappear();
-        BrowserUtils.waitForVisibility(userName, 5);
-        return userName.getText();
+        return BrowserUtils.waitForVisibility(userName, 5).getText();
     }
 
 
@@ -90,9 +89,6 @@ public class BasePage {
      * This method will navigate user to the specific module in vytrack application.
      * For example: if tab is equals to Activities, and module equals to Calls,
      * Then method will navigate user to this page: http://qa2.vytrack.com/call/
-     *
-     * param tab
-     * param module
      */
     public void navigateToModule(String tab, String module) {
         String tabLocator = "//span[normalize-space()='" + tab + "' and contains(@class, 'title title-level-1')]";

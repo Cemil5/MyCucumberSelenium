@@ -6,10 +6,10 @@ Feature: Contacts page
     When the user navigates to "Customers" "Contacts"
     Then default page number should be 1
 
-@smoke
+@smoke  @wip
   Scenario: Verify Create Calendar Event
     Given the user is on the login page
     And the user enters the sales manager information
-    When the user navigates to "Activities" "Calendar Events"
+    When the user navigates to "Activities" "Calendar EventsS"
     Then the title contains "Calendar"
 

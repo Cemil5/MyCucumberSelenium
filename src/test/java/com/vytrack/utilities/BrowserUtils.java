@@ -15,7 +15,6 @@ public class BrowserUtils {
 
     /**
      * Switches to new window by the exact title. Returns to original window if target title not found
-     * param targetTitle
      */
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.get().getWindowHandle();
@@ -29,9 +28,7 @@ public class BrowserUtils {
     }
 
     /**
-     * Moves the mouse to given element
-     *
-     * param element on which to hover
+     * Moves the mouse to given WebElement
      */
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.get());
@@ -39,44 +36,36 @@ public class BrowserUtils {
     }
 
     /**
-     * return a list of string from a list of elements
-     *
-     * param list of webelements
-     * return list of string
+     * returns a list of string from a list of elements
      */
     public static List<String> getElementsText(List<WebElement> list) {
-        List<String> elemTexts = new ArrayList<>();
-        for (WebElement el : list) {
-            elemTexts.add(el.getText());
+        List<String> elementTexts = new ArrayList<>();
+        for (WebElement element : list) {
+            elementTexts.add(element.getText());
         }
-        return elemTexts;
+        return elementTexts;
     }
 
     /**
      * Extracts text from list of elements matching the provided locator into new List<String>
-     *
-     * param locator
-     * return list of strings
      */
     public static List<String> getElementsText(By locator) {
 
-        List<WebElement> elems = Driver.get().findElements(locator);
-        List<String> elemTexts = new ArrayList<>();
+        List<WebElement> elements = Driver.get().findElements(locator);
+        List<String> elementTexts = new ArrayList<>();
 
-        for (WebElement el : elems) {
-            elemTexts.add(el.getText());
+        for (WebElement element : elements) {
+            elementTexts.add(element.getText());
         }
-        return elemTexts;
+        return elementTexts;
     }
 
     /**
-     * Performs a pause
-     *
-     * param seconds
+     * Performs a pause for given seconds
      */
     public static void waitFor(int seconds) {
         try {
-            Thread.sleep(seconds * 1000);
+            Thread.sleep((long)seconds * 1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -84,10 +73,6 @@ public class BrowserUtils {
 
     /**
      * Waits for the provided element to be visible on the page
-     *
-     * param element
-     * param timeToWaitInSec
-     * return
      */
     public static WebElement waitForVisibility(WebElement element, int timeToWaitInSec) {
         WebDriverWait wait = new WebDriverWait(Driver.get(), timeToWaitInSec);
@@ -136,11 +121,7 @@ public class BrowserUtils {
      * param timeOutInSeconds
      */
     public static void waitForPageToLoad(long timeOutInSeconds) {
-        ExpectedCondition<Boolean> expectation = new ExpectedCondition<Boolean>() {
-            public Boolean apply(WebDriver driver) {
-                return ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
-            }
-        };
+        ExpectedCondition<Boolean> expectation = driver -> ((JavascriptExecutor) driver).executeScript("return document.readyState").equals("complete");
         try {
             WebDriverWait wait = new WebDriverWait(Driver.get(), timeOutInSeconds);
             wait.until(expectation);
@@ -194,37 +175,6 @@ public class BrowserUtils {
             e.printStackTrace();
             Assert.fail("Element not found: " + element);
 
-        }
-    }
-
-
-    /**
-     * Waits for element to be not stale
-     *
-     * param element
-     */
-    public static void waitForStaleElement(WebElement element) {
-        int y = 0;
-        while (y <= 15) {
-            if (y == 1)
-                try {
-                    element.isDisplayed();
-                    break;
-                } catch (StaleElementReferenceException st) {
-                    y++;
-                    try {
-                        Thread.sleep(300);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                } catch (WebDriverException we) {
-                    y++;
-                    try {
-                        Thread.sleep(300);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
         }
     }
 
