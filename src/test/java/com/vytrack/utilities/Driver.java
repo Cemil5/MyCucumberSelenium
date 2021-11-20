@@ -10,6 +10,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -80,6 +82,28 @@ public class Driver {
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
+                    break;
+                case "remote-firefox":
+                    try{
+                        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+                        desiredCapabilities.setBrowserName(BrowserType.FIREFOX);
+                        driverPool.set(new RemoteWebDriver(new URL("http://13.58.94.118:4444/wd/hub"),
+                                desiredCapabilities));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case "remote-firefox1":
+                    try{
+                       FirefoxOptions firefoxOptions = new FirefoxOptions();
+                       firefoxOptions.setCapability("platform", Platform.ANY);
+                     //   driverPool.set(new RemoteWebDriver(new URL("http://13.58.94.118:4444/wd/hub"),
+                        driverPool.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+                                firefoxOptions));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    break;
             }
         }
         return driverPool.get();
