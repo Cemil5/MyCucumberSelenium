@@ -90,7 +90,10 @@
 
 -->
 
-                        <testFailureIgnore>true</testFailureIgnore>
+<!-- we have to set testFailureIgnore - false otherwise maven doesn't assume that build is failed
+if test fails // from jenkins short video 9.53.00       -->
+
+                        <testFailureIgnore>false</testFailureIgnore>
                         <runOrder>Alphabetical</runOrder>
                         <includes>
                             <include>**/*CukesRunner.java</include>
