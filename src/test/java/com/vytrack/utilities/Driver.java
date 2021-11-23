@@ -97,8 +97,8 @@ public class Driver {
                     try{
                        FirefoxOptions firefoxOptions = new FirefoxOptions();
                        firefoxOptions.setCapability("platform", Platform.ANY);
-                     //   driverPool.set(new RemoteWebDriver(new URL("http://13.58.94.118:4444/wd/hub"),
-                        driverPool.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+                        driverPool.set(new RemoteWebDriver(new URL("http://13.58.94.118:4444/wd/hub"),
+                     //   driverPool.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
                                 firefoxOptions));
                     } catch (Exception e) {
                         e.printStackTrace();
