@@ -8,6 +8,7 @@ import com.vytrack.utilities.DBUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
@@ -25,9 +26,11 @@ public class ContactsStepDefs {
         Assert.assertEquals(expectedNumber,actualNumber);
     }
 
+    String email;
     @When("the user clicks on {string} from contacts")
-    public void the_user_clicks_on_from_contacts(String email) {
-        contactsPage.clickEmailBox(email);
+    public void the_user_clicks_on_from_contacts(String expectedEmail) {
+        contactsPage.clickEmailBox(expectedEmail);
+        email = expectedEmail;
     }
 
     @Then("the information should be same with database")
@@ -47,7 +50,7 @@ public class ContactsStepDefs {
                 "on c.id = e.owner_id\n" +
                 "join orocrm_contact_phone p\n" +
                 "on c.id = p.owner_id\n" +
-                "where e.email = \"mbrackstone9@example.com\"");
+                "where e.email = \""+email+"\"");
 
         String expectedFullName = (String) rowMap.get("full_name");
         String expectedEmail = (String) rowMap.get("email");

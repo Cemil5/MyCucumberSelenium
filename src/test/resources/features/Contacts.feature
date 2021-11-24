@@ -13,10 +13,21 @@ Feature: Contacts page
     When the user navigates to "Activities" "Calendar Events"
     Then the title contains "Calendar"
 
-  @wip @smoke @db
+  @smoke @db
   Scenario: Contacts test with email
     Given the user logged in as "sales manager"
     And the user navigates to "Customers" "Contacts"
-    When the user clicks on "mbrackstone9@example.com" from contacts
+    When the user clicks on "steven.senger@hotmail.com" from contacts
     Then the information should be same with database
 
+  @wip @db
+  Scenario Outline: Contacts test
+    Given the user logged in as "sales manager"
+    And the user navigates to "Customers" "Contacts"
+    When the user clicks on "<email>" from contacts
+    Then the information should be same with database
+
+    Examples:
+      | email                     |
+      | steven.senger@hotmail.com |
+      | mbrackstone9@example.com  |
