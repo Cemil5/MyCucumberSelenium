@@ -99,9 +99,11 @@
 -->
 
 <!-- we have to set testFailureIgnore - false otherwise maven doesn't assume that build is failed
-if test fails // from jenkins short video 9.53.00       -->
+if test fails // from jenkins short video 9.53.00
+ It will not stop the maven execution after the failure. Then it will generate the report.
+ -->
 
-                        <testFailureIgnore>false</testFailureIgnore>
+                        <testFailureIgnore>true</testFailureIgnore>
                         <runOrder>Alphabetical</runOrder>
                         <includes>
                             <include>**/*CukesRunner.java</include>
@@ -125,6 +127,7 @@ if test fails // from jenkins short video 9.53.00       -->
                                 <projectName>Cucumber HTML Reports</projectName>
                                 <outputDirectory>${project.build.directory}</outputDirectory>
                                 <inputDirectory>${project.build.directory}</inputDirectory>
+                                <checkBuildResult>true</checkBuildResult>
                                 <jsonFiles>
                                     <param>**/cucumber*.json</param>
                                 </jsonFiles>
