@@ -1,17 +1,21 @@
 package com.vytrack.step_definitions;
 
+import com.github.javafaker.Faker;
 import com.vytrack.pages.ContactInfoPage;
 import com.vytrack.pages.ContactsPage;
 import com.vytrack.pages.DashboardPage;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.DBUtils;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.it.Ma;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -67,6 +71,55 @@ public class ContactsStepDefs {
 
     }
 
+    ContactInfoPage infoPage = new ContactInfoPage();
+    Object firstName;
+    Object lastName;
+    Object newEmail;
+    Faker faker = new Faker();
+    Map<String, Object> uiData = new HashMap<>();
 
 
+    @And("the user updates one contact details")
+    public void theUserUpdatesOneContactDataDetails() {
+        contactsPage.waitUntilLoaderScreenDisappear();
+        contactsPage.changeView("100");
+        BrowserUtils.waitFor(2);
+        contactsPage.getOneContact();
+        contactsPage.waitUntilLoaderScreenDisappear();
+
+        firstName = faker.name().firstName();
+        lastName = faker.name().lastName();
+        newEmail = faker.internet().emailAddress();
+
+        uiData.put("first_name", firstName);
+        uiData.put("last_name", lastName);
+        uiData.put("email",email);
+
+        BrowserUtils.waitFor(3);
+        infoPage.firstName.clear();
+        infoPage.firstName.sendKeys((CharSequence) firstName);
+        infoPage.lastName.clear();
+        infoPage.lastName.sendKeys((CharSequence) lastName);
+        infoPage.newEmail.clear();
+        infoPage.newEmail.sendKeys((CharSequence) newEmail);
+        System.out.println("firstName = " + firstName);
+        System.out.println("lastName = " + lastName);
+        System.out.println("newEmail = " + newEmail);
+        BrowserUtils.waitFor(1);
+        infoPage.saveAndClose.click();
+        infoPage.waitUntilLoaderScreenDisappear();
+    }
+
+    @Then("verify same data has been modified at the DB")
+    public void verifySameDataHasBeenModifiedAtTheDB() {
+        String query = "select first_name, last_name, oe.email \n" +
+                "from orocrm_contact oc join orocrm_contact_email oe on\n" +
+                "oc.id = oe.owner_id\n" +
+                "where oe.email = '"+ newEmail +"';";
+
+        Map <String, Object> contactData = DBUtils.getRowMap(query);
+
+        Assert.assertEquals(uiData,contactData);
+
+    }
 }
