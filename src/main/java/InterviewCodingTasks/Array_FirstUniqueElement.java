@@ -15,16 +15,12 @@ public class Array_FirstUniqueElement {
                 if (each == each2)
                     frequency++;
             }
-
             if (frequency > 1) {
                 firstDuplicated = each;
                 break;
             }
-
         }
-
         return firstDuplicated;
-
     }
 
 

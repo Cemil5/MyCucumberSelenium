@@ -1,5 +1,5 @@
 Feature: Contacts page
-
+  @wip
   Scenario: Default page number
     Given the user is on the login page
     And the user enters the driver information
@@ -20,7 +20,7 @@ Feature: Contacts page
     When the user clicks on "steven.senger@hotmail.com" from contacts
     Then the information should be same with database
 
-  @wip @db
+   @db
   Scenario Outline: Contacts test
     Given the user logged in as "sales manager"
     And the user navigates to "Customers" "Contacts"

@@ -79,12 +79,18 @@ public class Driver {
                         // selenimgrid ip 172.31.5.13:4444
                         // selenimgrid public ip : 13.58.94.118
                       //  driverPool.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),chromeOptions));
-                        driverPool.set(new RemoteWebDriver(new URL("http://13.58.94.118:4444/wd/hub"),chromeOptions));
+
+
+                        driverPool.set(new RemoteWebDriver(new URL("https://oauth-sdet.cemil.sahin-4698a:f5e9d6e6-8ad4-435c-ad5d-89605c889b2c@ondemand.eu-central-1.saucelabs.com:443/wd/hub"),chromeOptions));
+
+
+                    //    driverPool.set(new RemoteWebDriver(new URL("http://13.58.94.118:4444/wd/hub"),chromeOptions));
 
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
                     break;
+
                 case "remote-firefox":
                     try{
                         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();

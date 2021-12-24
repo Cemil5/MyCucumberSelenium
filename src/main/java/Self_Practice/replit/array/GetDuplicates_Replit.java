@@ -1,4 +1,4 @@
-package replit.array;
+package Self_Practice.replit.array;
 
 public class GetDuplicates_Replit {
 /*
@@ -47,7 +47,6 @@ hint: you will need a nested array the will run on the array we get from the met
 				}
 			}
 		}
-		
 		return result;
 	}
 	

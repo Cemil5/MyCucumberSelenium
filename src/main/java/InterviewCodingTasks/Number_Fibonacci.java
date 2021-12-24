@@ -2,7 +2,11 @@ package InterviewCodingTasks;
 
 public class Number_Fibonacci {
 
-    public int fibonacci(int num) {
+    public static void main(String[] args) {
+        System.out.println("fibonacci() = " + fibonacci(2));
+    }
+
+    public static int fibonacci(int num) {
 
         int result = 0;
         int j = 0;

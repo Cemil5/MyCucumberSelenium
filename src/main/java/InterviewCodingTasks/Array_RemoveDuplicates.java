@@ -9,12 +9,10 @@ public class Array_RemoveDuplicates {
     Write a function that can remove the duplicates from an array of integers
      */
 
-
     // solution 1
     public int[] removeDuplicates(int[] array){
         return Arrays.stream(array).distinct().toArray();
     }
-
 
     //solution 2
     public static int[] removeDuplicates2(int[] array){

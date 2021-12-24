@@ -22,7 +22,7 @@ public class __FibonacciSeries {
 		System.out.println("--------------------");
 
 		System.out.println("recursion");
-		mySolution(termsNumber);
+		// recursion(termsNumber);
 		
 	}
 	
@@ -36,7 +36,23 @@ public class __FibonacciSeries {
 			num2 = temp;
 		}
 	}
-	
+
+	public static void mySolution(int termsNumber) {
+		int num1 =0, num2 =1;
+
+		if (termsNumber <= 1) {
+			System.out.println(0);
+		} else {
+			System.out.print("0 1 ");
+			for (int i =2;i<termsNumber;i++) {
+				int temp = num1 + num2;
+				num1 = num2;
+				num2 = temp;
+				System.out.print(temp + " ");
+			}
+		}
+	}
+
 	public static void recursion(int count) {
 		int num1 =0, num2 =1, temp=0;
 		System.out.print(num1 + " ");
@@ -49,20 +65,6 @@ public class __FibonacciSeries {
 		}
 	}
 	
-	public static void mySolution(int termsNumber) {	
-		int num1 =0, num2 =1, temp=0;
-		
-		if (termsNumber <= 1) {
-			System.out.println(0);
-		} else {
-			System.out.print("0 1 ");
-			for (int i =2;i<termsNumber;i++) {
-				temp = num1 + num2;
-				num1 = num2;
-				num2 = temp;
-				System.out.print(temp + " ");
-			}		
-		}
-	}
+
 	
 }
