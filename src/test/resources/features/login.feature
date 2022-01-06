@@ -5,7 +5,7 @@ Feature: Users should be able to login
   Background:
     Given the user is on the login page
 
-  @driver @VYT-123
+  @driver @VYT-123  @firefox
   Scenario: Login as a driver
    # Given the user is on the login page
     When the user enters the driver information

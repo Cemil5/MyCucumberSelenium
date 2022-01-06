@@ -10,6 +10,7 @@ public class Array_SortInAscendingOrder {
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(sortingArrayAsc(new int[]{25, 52, 5, 1})));
+  //      System.out.println(Arrays.toString(withSortMethod(new int[]{25, 52, 5, 1})));
     }
 
     public static int[] sortingArrayAsc(int[] arr) {
@@ -25,11 +26,13 @@ public class Array_SortInAscendingOrder {
                     result[j] = temp;
                 }
             }
-
         }
-
         return result;
+    }
 
+    public int[] withSortMethod(int[] arr){
+        Arrays.sort(arr);
+        return arr;
     }
 
 

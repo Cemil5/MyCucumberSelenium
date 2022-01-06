@@ -99,6 +99,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>7.3.0</version>
+        </dependency>
+
     </dependencies>
 
         <build>
@@ -112,12 +119,12 @@
 
                     <configuration>
 
-<!--
+
 
                         <parallel>methods</parallel>
                         <useUnlimitedThreads>true</useUnlimitedThreads>
 
--->
+
 
 <!-- we have to set testFailureIgnore - false otherwise maven doesn't assume that build is failed
 if test fails // from jenkins short video 9.53.00

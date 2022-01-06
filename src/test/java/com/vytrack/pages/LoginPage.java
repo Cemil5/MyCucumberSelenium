@@ -2,6 +2,7 @@ package com.vytrack.pages;
 
 import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -40,8 +41,8 @@ public class LoginPage {
 
     public void login(String username, String password){
         usernameInput.sendKeys(username);
-        passwordInput.sendKeys(password);
-        loginBtn.click();
+        passwordInput.sendKeys(password, Keys.ENTER);
+        //loginBtn.click();
     }
 
     public void loginAsStoremanager() {

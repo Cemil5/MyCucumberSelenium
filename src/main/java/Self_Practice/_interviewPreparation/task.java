@@ -1,4 +1,4 @@
-package _interviewPreparation;
+package Self_Practice._interviewPreparation;
 
 public class task {
 

@@ -22,7 +22,7 @@ public class __FibonacciSeries {
 		System.out.println("--------------------");
 
 		System.out.println("recursion");
-		// recursion(termsNumber);
+	//	 recursion(termsNumber);
 		
 	}
 	
@@ -61,7 +61,8 @@ public class __FibonacciSeries {
 			temp = num1 + num2;
 			num1 = num2;
 			num2 = temp;
-			recursion(count--);
+			count = count--;
+			recursion(count);
 		}
 	}
 	

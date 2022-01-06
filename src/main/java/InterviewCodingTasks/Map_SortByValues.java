@@ -1,17 +1,29 @@
 package InterviewCodingTasks;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import io.cucumber.java.sl.In;
+
+import java.util.*;
 
 public class Map_SortByValues {
 
+    public static void main(String[] args) {
+
+        Map<String, Integer> map = new HashMap<>();
+
+        map.put("ab", 3);
+        map.put("cc", 2);
+        map.put("dd", 4);
+        map.put("ee",1);
+
+        System.out.println("sortByValue(map) = " + sortByValue(map));
+
+    }
+
     /*
-        Write a method that can sort the map by values
+        Write a method that can sort the map by values (ascending order)
      */
 
-    public Map<String, Integer> sortByValue(Map<String, Integer> map) {
+    public static Map<String, Integer> sortByValue(Map<String, Integer> map) {
         List<Map.Entry<String, Integer>> list = new ArrayList<>(map.entrySet());
         list.sort(Map.Entry.comparingByValue());
 

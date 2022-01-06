@@ -1,4 +1,4 @@
-package day47_collection_part2;
+package JavaLesson.day47_collection_part2;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -49,7 +49,7 @@ public class LoopWithIterator {
 		
 		for(String city : cities) {
 			if(city.equals("Boston")) {
-				cities.remove(city);	// SİLEMEZ : java.util.ConcurrentModificationException
+				cities.remove(city);	// cannot remove : java.util.ConcurrentModificationException
 			}
 		}
 		

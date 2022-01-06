@@ -1,4 +1,4 @@
-package a_live_review.week12_21_08_2021;
+package JavaLesson.a_live_review.week12_21_08_2021;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -36,7 +36,11 @@ public class ArrayListPractice2 {
 		for (int i = list1.size()-1; i>=0; i--) {
 			list2.add(list1.get(i));
 		}
-		System.out.println(list2);
+		System.out.println("reversed via for loop" + list2);
+
+		Collections.reverse(list2);
+		System.out.println("reversed via method" + list2);
+
 
 		System.out.println("------------------------------------");
 

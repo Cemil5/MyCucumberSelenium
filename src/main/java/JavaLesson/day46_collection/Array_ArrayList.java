@@ -1,8 +1,6 @@
-package day46_collection;
+package JavaLesson.day46_collection;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 public class Array_ArrayList {
 
@@ -17,6 +15,7 @@ public class Array_ArrayList {
 		ArrayList<Integer> list1 = new ArrayList<>();
 		List<Integer> list2 = new ArrayList<>();
 		Collection<Integer> list3 = new ArrayList<>();
+
 		
 		list1.add(44);
 		list1.add(50);
@@ -24,8 +23,16 @@ public class Array_ArrayList {
 		
 		System.out.println(numsArray[0]);
 		System.out.println(list1.get(0));
-		
-		
+
+		Collections.sort(list1);
+		List<int[]> ints = Arrays.asList(numsArray);
+		System.out.println("numsArray.equals(ints) = " + numsArray.equals(ints));
+		int i = numsArray.length;
+		Arrays.stream(numsArray).max();
+		numsArray.clone();
+		Arrays.stream(numsArray).count();
+		Object object = new Object();
+		System.out.println("numsArray[numsArray.length-1] = " + numsArray[numsArray.length - 1]);
 	}
 
 }

@@ -25,6 +25,7 @@ public class ConfigurationReader {
             file.close();
         } catch (Exception e) {
             e.printStackTrace();
+            throw new RuntimeException("configuration.properties file not found");
         }
     }
 

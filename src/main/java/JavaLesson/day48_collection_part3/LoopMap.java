@@ -1,6 +1,7 @@
-package day48_collection_part3;
+package JavaLesson.day48_collection_part3;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -47,7 +48,23 @@ public class LoopMap {
 		Map<String, Map<Integer, Integer>> data4 = new HashMap<>();
 		Map<String, Map<Integer, Product>> data5 = new HashMap<>();
 
-		
+
+		dataMap.keySet().removeIf(o -> o.equals("truckdriver"));
+		System.out.println(" removeIf +++++++ KEY | VALUES +++++++");
+		for (String key : dataMap.keySet()) {
+			System.out.println(key + " = " + dataMap.get(key));
+		}
+
+		Iterator it2 = dataMap.keySet().iterator();
+		while (it2.hasNext()){
+			if (it2.next().equals("storemanager")){
+				it2.remove();
+			}
+		}
+		System.out.println(" while +++++++ KEY | VALUES +++++++");
+		for (String key : dataMap.keySet()) {
+			System.out.println(key + " = " + dataMap.get(key));
+		}
 	}
 
 }
