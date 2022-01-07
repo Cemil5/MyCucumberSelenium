@@ -13,12 +13,27 @@ public class ReadingFromAnyFile {
         System.out.println("read.readLine() = " + read.readLine());
         System.out.println("read.readLine() = " + read.readLine());
 
-        // read file with Scanner (can read csv file)
-        FileReader file2 = new FileReader("src/main/resources/textFile.txt");
+        // read excell file with BufferedReader (NO MEANINGFUL RESULT)
+        file1 = new FileReader("src/main/resources/readTest.xlsx");
+        read = new BufferedReader(file1);
+        System.out.println("read.readLine() = " + read.readLine());
+        System.out.println("read.readLine() = " + read.readLine());
+
+        // read csv file with Scanner
+        FileReader file2 = new FileReader("src/main/resources/readTest.csv");
         Scanner scan = new Scanner(file2);
         while (scan.hasNextLine()){
             System.out.println( scan.nextLine());
         }
+
+
+        // read file with Scanner (can read csv file)
+        file2 = new FileReader("src/main/resources/textFile.txt");
+        scan = new Scanner(file2);
+        while (scan.hasNextLine()){
+            System.out.println( scan.nextLine());
+        }
+
 
         // writing to a file with BufferedWriter
         FileWriter file3 = new FileWriter("src/main/resources/TextWrite.txt");
@@ -26,8 +41,6 @@ public class ReadingFromAnyFile {
         writer.write("Hey everyone");
         writer.write("\nAre you good");
         writer.close(); // to execute writing
-
-
 
 
     }
