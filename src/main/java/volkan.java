@@ -14,7 +14,6 @@ public class volkan {
         temp.add(2);
         temp.add(2);
 
-
         System.out.println(getPlanetToDestroy(temp));
 
     }

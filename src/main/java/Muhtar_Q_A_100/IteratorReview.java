@@ -49,16 +49,16 @@ public class IteratorReview {
         dataMap.put("url", "qa3.vytrack.com");   dataMap.put("username", "user66");
         dataMap.put("password", "abc66");        dataMap.put("browser", "chrome");
         dataMap.put("truckdriver", "Bob");       dataMap.put("storemanager", "John");
-        // keySet() 	: returns set with all the keys in the map
-        // values()	: returns with all the values in the map
 
+
+        // using Collection.removeIf
         dataMap.keySet().removeIf(o -> o.equals("truckdriver"));
         System.out.println(" removeIf +++++++ KEY | VALUES +++++++");
         for (String key : dataMap.keySet()) {
             System.out.println(key + " = " + dataMap.get(key));
         }
 
-        Iterator it4 = dataMap.keySet().iterator();
+        Iterator<String> it4 = dataMap.keySet().iterator();
         while (it4.hasNext()){
             if (it4.next().equals("storemanager")){
                 it4.remove();
@@ -68,7 +68,6 @@ public class IteratorReview {
         for (String key : dataMap.keySet()) {
             System.out.println(key + " = " + dataMap.get(key));
         }
-
 
     }
 

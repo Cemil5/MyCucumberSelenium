@@ -1,10 +1,10 @@
-package _interviewPreparation;
+package Self_Practice._interviewPreparation;
 
 public class ReverseWord {
 
 	public static void main(String[] args) {
 
-		System.out.println(reverseWord("foo"));  // "oof"
+		System.out.println(reverseWord("foo").equalsIgnoreCase("oof") ? "PASS" : "Fail");  //
 		System.out.println(reverseWord("student"));
 		
 	}

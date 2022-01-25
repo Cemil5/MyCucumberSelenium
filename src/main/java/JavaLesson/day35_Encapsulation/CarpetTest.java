@@ -1,4 +1,4 @@
-package day35_Encapsulation;
+package JavaLesson.day35_Encapsulation;
 
 public class CarpetTest {
 
@@ -6,7 +6,7 @@ public class CarpetTest {
 		
 	//	Floor f = new Floor(0, 0);
 			
-		Calculator calculator = new Calculator(new Floor(10, 5), new Carpet(3.5));
+		Calculator calculator = new Calculator(new day35_Encapsulation.Floor(10, 5), new day35_Encapsulation.Carpet(3.5));
 		
 		System.out.println(calculator.getTotalCost());
 	}

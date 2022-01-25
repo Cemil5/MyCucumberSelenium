@@ -26,17 +26,17 @@ public class printFormat {
         int x= 15;
         System.out.printf("%-15s%03d%n", s1, x);
         System.out.printf("'%-15s%05d' %n", s1, x);
-        System.out.printf("'%03d'", s1);
-        System.out.printf("'%03d'", x);
+        System.out.printf("'%30s'", s1);
+        System.out.printf("'%30d'", x);
 
-
+/*
 
         Scanner sc = new Scanner(System.in);
         System.out.println("================================");
 
         for (int i = 0; i < 3; i++) {
-            String s1 = sc.next();
-            int x = sc.nextInt();
+            s1 = sc.next();
+            x = sc.nextInt();
             if (s1.length() < 15) {
                 for (int j = s1.length(); j <= 15; j++) {
                     s1 += " ";
@@ -53,7 +53,7 @@ public class printFormat {
             }
             System.out.println(s1 + res);
             System.out.println("================================");
-
-
+        }
+*/
     }
 }

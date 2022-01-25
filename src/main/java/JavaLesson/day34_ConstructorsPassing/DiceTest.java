@@ -1,16 +1,16 @@
-package day34_ConstructorsPassing;
+package JavaLesson.day34_ConstructorsPassing;
 
 public class DiceTest {
 
 	public static void main(String[] args) {
 		
-		Dice sixDice = new Dice(6);
-		rollDice(sixDice, new Dice(5));
+		day34_ConstructorsPassing.Dice sixDice = new day34_ConstructorsPassing.Dice(6);
+		rollDice(sixDice, new day34_ConstructorsPassing.Dice(5));
 		
 		
 	}
 	
-	public static void rollDice(Dice d1, Dice d2) {
+	public static void rollDice(day34_ConstructorsPassing.Dice d1, day34_ConstructorsPassing.Dice d2) {
 		//Rolling a 6 sided dice
 //		Dice d1 = new Dice(6);
 //		d1.roll();

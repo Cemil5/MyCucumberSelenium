@@ -18,9 +18,7 @@ public class Array_MergeTwoArrays {
         for (int each : arr2) {
             result[i++] = each;
         }
-
         return result;
-
     }
 
 }

@@ -1,4 +1,4 @@
-package a_live_review.week10_07_08_2021;
+package JavaLesson.a_live_review.week10_07_08_2021;
 
 import java.util.Arrays;
 

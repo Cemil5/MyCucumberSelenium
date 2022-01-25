@@ -1,4 +1,4 @@
-package a_live_review.week10_07_08_2021;
+package JavaLesson.a_live_review.week10_07_08_2021;
 
 import java.util.Arrays;
 
@@ -20,7 +20,11 @@ public class MultiDimensionalArray {
 		System.out.println(students[0].length); // 5
 		System.out.println(students[0][4]);	//Recep
 		System.out.println(students[0][4].length());
-		
+
+		students[0][4] = "Basgan";
+		System.out.println(students[0][4]);	//Recep
+
+
 		// retrieve the members of group3
 		System.out.println(students[2]);
 		System.out.println(Arrays.toString(students[2]));

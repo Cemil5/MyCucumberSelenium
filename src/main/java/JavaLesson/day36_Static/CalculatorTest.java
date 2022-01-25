@@ -1,10 +1,11 @@
-package day36_Static;
+package JavaLesson.day36_Static;
+import day36_Static.Calculator;
 
 public class CalculatorTest {
 
 	public static void main(String[] args) {
 		
-		double result = Calculator.plus(55, 7); // static way
+		double result = day36_Static.Calculator.plus(55, 7); // static way
 		System.out.println(result);
 		
 		Calculator c = new Calculator();

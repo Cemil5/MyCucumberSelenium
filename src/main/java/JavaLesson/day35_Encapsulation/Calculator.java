@@ -1,12 +1,12 @@
-package day35_Encapsulation;
+package JavaLesson.day35_Encapsulation;
 
 public class Calculator {
 	
-	Floor floor;
+	day35_Encapsulation.Floor floor;
 	
-	Carpet carpet;
+	day35_Encapsulation.Carpet carpet;
 	
-	public Calculator(Floor floor, Carpet carpet) {
+	public Calculator(day35_Encapsulation.Floor floor, day35_Encapsulation.Carpet carpet) {
 		this.floor = floor;
 		this.carpet = carpet;
 	}

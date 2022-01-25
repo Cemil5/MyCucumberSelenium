@@ -186,6 +186,9 @@ public class Driver {
                     e.printStackTrace();
                 }
                 break;
+            default:
+                throw new WebDriverException("Your OS doesn't support " + browserType + ". Check the browser " +
+                        "type in configuration.properties file.");
         }
     }
 

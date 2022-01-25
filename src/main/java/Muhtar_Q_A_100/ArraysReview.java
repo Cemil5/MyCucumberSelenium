@@ -11,6 +11,9 @@ public class ArraysReview {
 
         array2 = Arrays.copyOf(array1, array1.length);
 
+        System.out.println("array2 = " + array2);
+        System.out.println("array2 = " + Arrays.toString(array2));
+
         System.out.println("============================");
 
 
@@ -18,6 +21,9 @@ public class ArraysReview {
         }
         while (System.out.append("how are you").equals("")){
         }
+
+        System.out.println("============================");
+
 
 
 
