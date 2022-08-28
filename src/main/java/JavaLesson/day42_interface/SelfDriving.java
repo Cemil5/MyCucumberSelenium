@@ -1,4 +1,4 @@
-package day42_interface;
+package JavaLesson.day42_interface;
 
 public interface SelfDriving {
 	

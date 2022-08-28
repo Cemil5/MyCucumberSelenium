@@ -1,4 +1,4 @@
-package day48_collection_part3;
+package JavaLesson.day48_collection_part3;
 
 import java.util.ArrayList;
 import java.util.HashMap;

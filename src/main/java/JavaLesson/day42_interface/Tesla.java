@@ -1,6 +1,6 @@
-package day42_interface;
+package JavaLesson.day42_interface;
 
-public class Tesla extends ElectricCar{
+public class Tesla extends ElectricCar {
 
 	public Tesla(String model, double price, String color) {
 		super(model, price, color);

@@ -1,4 +1,4 @@
-package day24_Array;
+package JavaLesson.day24_Array;
 
 public class ArrayCreation {
 

@@ -1,4 +1,4 @@
-package day42_interface;
+package JavaLesson.day42_interface;
 
 import java.util.ArrayList;
 
