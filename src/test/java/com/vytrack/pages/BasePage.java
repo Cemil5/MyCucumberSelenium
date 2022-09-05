@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class BasePage {
+public abstract class BasePage {
 
     @FindBy(css = "div[class='loader-mask shown']")
     @CacheLookup
