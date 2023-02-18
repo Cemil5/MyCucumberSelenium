@@ -1,12 +1,12 @@
 @login  @smoke
 Feature: login
-
-  Scenario:
-    Given the user is on the login page
-
-
   Background:
     Given the user is on the login page
+
+#  Scenario:
+#    Given the user is on the login page
+
+
 
   @driver @VYT-123
   Scenario: Login as a driver
