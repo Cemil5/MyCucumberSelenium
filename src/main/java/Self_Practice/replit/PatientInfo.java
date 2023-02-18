@@ -33,9 +33,9 @@ public class PatientInfo {
         System.out.println("Enter your zip code");
         zipcode = scan.nextInt();
         System.out.println("Enter your work phone number");
-        workPhoneNumber = scan.nextInt();
+        workPhoneNumber = scan.nextLong();
         System.out.println("Enter your personal phone number");
-        personalPhoneNumber = scan.nextInt();
+        personalPhoneNumber = scan.nextLong();
         System.out.println("Enter your age");
         age = scan.nextInt();
         System.out.println("Enter your height");
@@ -47,7 +47,8 @@ public class PatientInfo {
 		isMarried=scan.next().equals("yes");
 Question is true/false but the input is String , we can not convert a string to boolean. Actually scan.nextBoolean()
 is a kind of function to read the input string and convert it to boolean.
-But our input string is the word "yes". So compiler can not understand wheter "yes" means true or false. So we interpret it to a boolean value.
+But our input string is the word "yes". So compiler can not understand whether "yes" means true or false. So we
+interpret it to a boolean value.
 		*/
 
         contacts = "work phone number - " + workPhoneNumber + ", personal phone number - " + personalPhoneNumber + ", email: " + email;
